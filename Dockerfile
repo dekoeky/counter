@@ -1,5 +1,7 @@
+
+
 # Use a minimal base image
-FROM alpine:latest
+FROM --platform=$BUILDPLATFORM alpine:latest
 
 # Install Bash
 RUN apk add --no-cache bash
