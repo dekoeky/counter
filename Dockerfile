@@ -12,14 +12,14 @@ RUN addgroup -S counter && adduser -S counter -G counter
 WORKDIR /app
 
 # Copy the shell script into the container
-COPY program.sh .
+COPY app.sh .
 
 # Make the shell script executable
-RUN chmod +x /app/program.sh
+RUN chmod +x /app/app.sh
 
 
 # Change ownership of the script to the non-root user
-RUN chown counter:counter /app/program.sh
+RUN chown counter:counter /app/app.sh
 
 # Set App User
 USER counter
@@ -30,4 +30,4 @@ ENV increment=1
 ENV delay=1
 
 # Set the entrypoint to run the shell script
-ENTRYPOINT ["/bin/bash", "/app/program.sh"]
+ENTRYPOINT ["/bin/bash", "/app/app.sh"]
