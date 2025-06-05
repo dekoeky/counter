@@ -44,4 +44,12 @@ jobs:
           linux/ppc64le
           linux/riscv64
           linux/s390x
+    
+    
+    - name: Docker Hub Description
+      uses: peter-evans/dockerhub-description@v4
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+        repository: dekoeky/counter
         
