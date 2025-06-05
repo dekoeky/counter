@@ -1,5 +1,5 @@
 # Use a minimal base image
-FROM --platform=$BUILDPLATFORM busybox:latest
+FROM --platform=$BUILDPLATFORM busybox:musl
 
 # Create app directory and user
 WORKDIR /app
