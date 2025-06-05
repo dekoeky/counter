@@ -46,11 +46,15 @@ jobs:
           linux/s390x
     
     
+    # This step copies the local README.md to the Docker Hub General Page
     - name: Docker Hub Description
-      uses: peter-evans/dockerhub-description@v4
+      #https://github.com/peter-evans/dockerhub-description
+      uses: peter-evans/dockerhub-description@v4 
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         repository: dekoeky/counter
         short-description: ${{ github.event.repository.description }}
+        readme-filepath: ./README.md
+
         
