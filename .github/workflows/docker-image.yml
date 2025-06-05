@@ -52,4 +52,5 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         repository: dekoeky/counter
+        short-description: ${{ github.event.repository.description }}
         
