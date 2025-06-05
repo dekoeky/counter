@@ -1,33 +1,19 @@
-
-
 # Use a minimal base image
-FROM --platform=$BUILDPLATFORM alpine:latest
+FROM --platform=$BUILDPLATFORM busybox:latest
 
-# Install Bash
-RUN apk add --no-cache bash
-
-# Create a new user and group
+# Create app directory and user
+WORKDIR /app
 RUN addgroup -S counter && adduser -S counter -G counter
 
-WORKDIR /app
-
-# Copy the shell script into the container
+# Copy script and fix permissions
 COPY app.sh .
+RUN chmod +x app.sh && chown counter:counter app.sh
 
-# Make the shell script executable
-RUN chmod +x /app/app.sh
-
-
-# Change ownership of the script to the non-root user
-RUN chown counter:counter /app/app.sh
-
-# Set App User
+# Switch to non-root user
 USER counter
 
-# Set default variable values
-ENV start=0
-ENV increment=1
-ENV delay=1
+# Set env vars with defaults
+ENV start=0 increment=1 delay=1
 
-# Set the entrypoint to run the shell script
-ENTRYPOINT ["/bin/bash", "/app/app.sh"]
+# Use the native /bin/sh (busybox) for minimal overhead
+ENTRYPOINT ["/bin/sh", "/app/app.sh"]
