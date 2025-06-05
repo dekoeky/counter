@@ -1,5 +1,5 @@
 # Use a minimal base image
-FROM --platform=$BUILDPLATFORM busybox:musl
+FROM --platform=$BUILDPLATFORM alpine:latest
 
 # Create app directory and user
 WORKDIR /app
