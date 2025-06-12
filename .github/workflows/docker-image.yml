@@ -34,21 +34,15 @@ jobs:
       with:
         push: true
         tags: dekoeky/counter:latest
-        # platforms: |
-        #   linux/amd64
-        #   linux/arm64
-        #   linux/arm32v7
-        #   linux/arm32v6
-        #   linux/arm64v8
-        #   linux/i386
-        #   linux/ppc64le
-        #   linux/riscv64
-        #   linux/s390x
         platforms: |
-          linux/amd64
-          linux/arm64
-          linux/arm/v7
-    
+            linux/amd64
+            linux/arm/v6
+            linux/arm/v7
+            linux/arm64/v8
+            linux/386
+            linux/ppc64le
+            linux/riscv64
+            linux/s390x
     
     # This step copies the local README.md to the Docker Hub General Page
     - name: Docker Hub Description
