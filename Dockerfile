@@ -1,5 +1,5 @@
 # Use a minimal base image
-FROM --platform=$BUILDPLATFORM alpine:latest
+FROM alpine:latest
 
 # Create app directory and user
 WORKDIR /app
