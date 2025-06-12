@@ -47,7 +47,7 @@ jobs:
       with:
         push: true
         tags: |
-          dekoeky/counter:${{ steps.gitversion.outputs.semVer }}
+          dekoeky/counter:${{ steps.gitversion.outputs.majorMinorPatch }}
           dekoeky/counter:latest
         platforms: |
             linux/amd64
