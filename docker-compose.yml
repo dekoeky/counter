@@ -1,7 +1,0 @@
-services:
-  counter:
-    image: dekoeky/counter:localbuild
-    build:
-      context: .
-      dockerfile: Dockerfile
-    

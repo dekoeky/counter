@@ -31,12 +31,31 @@ docker run --rm -e start=10 -e increment=2 -e delay=0.5 dekoeky/counter
 # ...
 ```
 
+## Building Locally
+If you want to build the dockerfile locally, you could use the following scripts
+```shell
+# Shell
+docker buildx build \
+  --platform linux/amd64,linux/arm64,linux/arm/v7 \
+  --tag vt6109/test:latest \
+  --push \
+  .
+```
+
+```powershell
+# PowerShell
+docker buildx build \
+  --platform linux/amd64,linux/arm64,linux/arm/v7 \
+  --tag vt6109/test:latest \
+  --push \
+  .
+```
 ## References
 [Docker - Multi-Platform](https://docs.docker.com/build/building/multi-platform/)
 
 
 
 ---
-![Docker Pulls](https://img.shields.io/docker/pulls/dekoeky/counter)
-![Image Size](https://img.shields.io/docker/image-size/dekoeky/counter/latest)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dekoeky/counter)](https://hub.docker.com/r/dekoeky/counter)
+[![Image Size](https://img.shields.io/docker/image-size/dekoeky/counter/latest)](https://hub.docker.com/r/dekoeky/counter)
 [![Build](https://github.com/dekoeky/counter/actions/workflows/docker-image.yml/badge.svg)](https://github.com/dekoeky/counter/actions/workflows/docker-image.yml)
