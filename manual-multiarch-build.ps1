@@ -1,0 +1,6 @@
+docker buildx build `
+  --platform linux/amd64,linux/arm64,linux/arm/v7 `
+  --tag vt6109/test:latest `
+  --push `
+  -f Dockerfile `
+  .

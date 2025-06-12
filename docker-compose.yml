@@ -1,6 +1,6 @@
 services:
   counter:
-    image: dekoeky/counter:dev
+    image: dekoeky/counter:localbuild
     build:
       context: .
       dockerfile: Dockerfile

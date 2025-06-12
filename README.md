@@ -30,6 +30,13 @@ docker run --rm -e start=10 -e increment=2 -e delay=0.5 dekoeky/counter
 # Counter: 14
 # ...
 ```
+
+## References
+[Docker - Multi-Platform](https://docs.docker.com/build/building/multi-platform/)
+
+
+
+---
 ![Docker Pulls](https://img.shields.io/docker/pulls/dekoeky/counter)
 ![Image Size](https://img.shields.io/docker/image-size/dekoeky/counter/latest)
 [![Build](https://github.com/dekoeky/counter/actions/workflows/docker-image.yml/badge.svg)](https://github.com/dekoeky/counter/actions/workflows/docker-image.yml)
